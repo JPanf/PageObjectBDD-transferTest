@@ -52,7 +52,6 @@ public class DataHelper {
         return Math.abs(new Random().nextInt(balance)+1);
     }
     public static int generateInvalidAmount(int balance) {
-        //return Math.abs(balance) + new Random().nextInt(1000);
         return Math.abs(new Random().nextInt(balance)+(balance));
     }
 }

@@ -3,14 +3,8 @@ package ru.netology.web.test;
 import org.junit.jupiter.api.Test;
 import ru.netology.web.data.DataHelper;
 import ru.netology.web.page.LoginPageV1;
-import ru.netology.web.page.LoginPageV2;
-import ru.netology.web.page.LoginPageV3;
-import ru.netology.web.page.TransferPage;
-
-import java.util.Random;
 
 import static com.codeborne.selenide.Selenide.open;
-import static java.lang.Math.random;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static ru.netology.web.data.DataHelper.generateInvalidAmount;
 import static ru.netology.web.data.DataHelper.generateValidAmount;
@@ -59,7 +53,7 @@ class MoneyTransferTest {
     }
 
     @Test
-    void shouldNotTransferOverBallanceSum() {
+    void shouldNotTransferOverBalanceSum() {
         open("http://localhost:9999");
         var loginPage = new LoginPageV1();
         var authInfo = DataHelper.getAuthInfo();
@@ -73,6 +67,6 @@ class MoneyTransferTest {
         var transferPage = dashboardPage.chooseCardForTransfer(secondCardInfo);
         int amount = generateInvalidAmount(firstCardBalance);
         transferPage.fillAmount(amount, firstCardInfo.getCardNumber());
-        transferPage.ErrorMessage();
+        transferPage.errorMessage();
     }
 }

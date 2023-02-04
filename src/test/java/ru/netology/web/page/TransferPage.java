@@ -23,7 +23,7 @@ public class TransferPage {
         return new DashboardPage();
     }
 
-    public void ErrorMessage (){
+    public void errorMessage (){
         errorMessage.shouldBe(visible);
     }
 
